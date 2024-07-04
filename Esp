@@ -3,7 +3,7 @@ local Workspace, RunService, Players, CoreGui, Lighting = cloneref(game:GetServi
 local ESP = {
     Enabled = true,
     TeamCheck = true,
-    MaxDistance = 200,
+    MaxDistance = 300000,
     FontSize = 11,
     FadeOut = {
         OnDistance = true,
@@ -23,7 +23,7 @@ local ESP = {
             Fill_Transparency = 100,
             OutlineRGB = Color3.fromRGB(119, 120, 255),
             Outline_Transparency = 100,
-            VisibleCheck = true,
+            VisibleCheck = false,
         },
         Names = {
             Enabled = true,
