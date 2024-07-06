@@ -414,6 +414,32 @@ do -- Initalize
         --
         game:GetService("Players").PlayerAdded:Connect(function(v)
             coroutine.wrap(ESP)(v)
-        end);
-    end;
-end;
+        end)
+    end
+end
+
+_G.EspEnabled = true
+
+function EnableEsp()
+    while _G.EspEnabled do
+        -- Your existing ESP logic here
+        -- Example: Create ESP elements
+        wait(1)  -- Adjust the delay as needed
+    end
+end
+
+function DisableEsp()
+    _G.EspEnabled = false
+    -- Logic to remove ESP elements
+    -- Example: Remove all ESP elements
+    for _, v in pairs(game.Workspace:GetChildren()) do
+        if v:IsA("BillboardGui") then
+            v:Destroy()
+        end
+    end
+end
+
+-- Call EnableEsp if ESP is enabled by default
+if _G.EspEnabled then
+    EnableEsp()
+end
